@@ -17,7 +17,9 @@
     
     <script>
         const secondHand = document.querySelector('.second-hand')
-    
+        const hourHand = document.querySelector('.hour-hand')
+        const minutesHand = document.querySelector('.min-hand')
+
         function setDate() {
             // date today
             const now = new Date();
@@ -30,7 +32,15 @@
             // manipulate the css
             secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
+
            
+            const minutes = now.getMinutes();
+            // to set the minutes hand right:
+            const minutesDegrees = ((minutes / 60) * 360) + ((seconds/60)*6) + 90;
+            // const minutesDegrees = ((minutes / 60) * 360) + 90;
+            minutesHand.style.transform = `rotate(${minutesDegrees}deg)`
+
+         
             console.log(seconds)
         }
 
