@@ -16,7 +16,26 @@
       </div>
     
     <script>
-        
+        const secondHand = document.querySelector('.second-hand')
+    
+        function setDate() {
+            // date today
+            const now = new Date();
+            // get the seconds
+            const seconds = now.getSeconds();
+            // turn seconds into degrees to move the clock hands
+            // add 90 degrees to offset the css default
+            const secondsDegrees = ((seconds / 60) * 360) + 90;
+            // move the secondHand accdg to the degrees
+            // manipulate the css
+            secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+           
+            console.log(seconds)
+        }
+
+        // run every second/any amount of time
+        setInterval(setDate, 1000);
 
     </script>
 </body>
