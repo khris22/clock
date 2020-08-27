@@ -38,6 +38,17 @@ html {
   }
 
   .hand {
+    /* rotate the hand at the end (pivot point)*/
+    /* by default: transform-origin: 50% */
+    transform-origin: 100%;
+    /* start at 12:00 */
+    transform: rotate(90deg);
+    /* move the hands smoothly */
+    transition: all 0.5s;
+    /* another option */
+    /* transition-timing-function: ease-in-out; */
+    /* make that tick animation */
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     width: 50%;
     height: 6px;
     background: black;
