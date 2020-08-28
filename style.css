@@ -1,5 +1,5 @@
 html {
-    background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+    background: #7e8d82;
     background-size: cover;
     font-family: 'helvetica neue';
     text-align: center;
@@ -37,21 +37,45 @@ html {
     transform: translateY(-3px); /* account for the height of the clock hands */
   }
 
+
   .hand {
+    width: 50%;
+    height: 6px;
+    background: rgb(226, 78, 78);
+    position: absolute;
+    top: 50%;
     /* rotate the hand at the end (pivot point)*/
     /* by default: transform-origin: 50% */
     transform-origin: 100%;
     /* start at 12:00 */
     transform: rotate(90deg);
-    /* move the hands smoothly */
-    transition: all 0.5s;
-    /* another option */
+    transition: all 0.01s;
+     /* another option */
     /* transition-timing-function: ease-in-out; */
     /* make that tick animation */
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-    width: 50%;
-    height: 6px;
-    background: black;
-    position: absolute;
+    border-radius: 5px;
+  }
+  
+  .hour-hand {
+    width: 25%;
+    margin-left: 25%;
+    background: rgb(45, 45, 46);
+  }
+  
+  .min-hand {
+    width: 40%;
+    margin-left: 10%;
+    background: rgb(45, 45, 46);
+  }
+  
+  .inner-circle {
     top: 50%;
+    position: absolute;
+    margin-left: 48%;
+    width: 10px;
+    height: 8px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background: rgb(0, 0, 0);
   }
