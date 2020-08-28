@@ -12,6 +12,7 @@
           <div class="hand hour-hand"></div>
           <div class="hand min-hand"></div>
           <div class="hand second-hand"></div>
+          <div class="inner-circle"></div>
         </div>
       </div>
     
@@ -21,6 +22,7 @@
         const minutesHand = document.querySelector('.min-hand')
 
         function setDate() {
+       
             // date today
             const now = new Date();
             // get the seconds
@@ -45,22 +47,22 @@
 
             // temporarily take off the transition
             // then reapply to avoid going backwardss
-            if(secondsDegrees === 90) {
-                secondHand.style.transition = 'all 0s';
-            }else{
-                secondHand.style.transition = 'all 5s'
-            }
-
-            if(minutesDegrees === 90) {
-                minutesHand.style.transition = 'all 0s';
-            }else{
-                minutesHand.style.transition = 'all 5s'
-            }
+            // if(secondsDegrees === 90) {
+            //     secondHand.style.transition = 'all 0s';
+            // }else{
+            //     secondHand.style.transition = 'all 5s'
+            // }
+            // if(minutesDegrees === 90) {
+            //     minutesHand.style.transition = 'all 0s';
+            // }else{
+            //     minutesHand.style.transition = 'all 5s'
+            // }
         }
 
         // run every second/any amount of time
         setInterval(setDate, 1000);
         setDate();
+       
 
     </script>
 </body>
